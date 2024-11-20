@@ -50,7 +50,7 @@ button:hover{
 /* telefono */
 @media(min-width: 375px){
   body{
-    background-color: orange;
+    background-color: darkcyan;
   }
 }
 /* tablet */
