@@ -1,0 +1,69 @@
+/* :root{
+  --primaro: #ffff;
+  se mandan llamar con var(--primario);
+} */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: hwb(28 89% 5%);
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'Fraunces', serif; */
+  box-sizing: border-box;
+}
+
+main{
+  background-color: grey;
+  width: 60rem;
+  height: 60vh;
+  margin: 0 auto; /* el margin las medidas se manejan como las manecillas del reloj arriba derecha abajo e izquierda */
+  /* border-radius: 10px; 
+    overflow: hidden;  */
+    /* object-fit: cover; */
+  
+}
+
+.container{
+  /* background-color: orange; */
+  display: flex;
+  justify-content: space-evenly; /* esto acomoda de forma horizontal */
+  /* align-items: center; esto acomoda de forma de bloques o columnas  es ideal que antes se aplique un flex-direction: column*/
+  /* flex-direction: row; este ya es por defecto y es acomodar en linea los elementos */
+}
+
+
+.precio{
+  font-weight: bold; /* para que este en negrita la fuente */
+}
+
+button{
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: aqua;
+}
+
+/* telefono */
+@media(min-width: 375px){
+  body{
+    background-color: orange;
+  }
+}
+/* tablet */
+@media (min-width: 760px) {
+  body{
+    background-color: brown;
+  }
+   
+}
+
+/* desktop */
+@media (min-width: 1440px) {
+   body{
+    background-color: pink;
+   }
+}
