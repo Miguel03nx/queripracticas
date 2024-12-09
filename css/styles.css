@@ -2,10 +2,15 @@
   --primaro: #ffff;
   se mandan llamar con var(--primario);
 } */
-*,
-*::before,
-*::after {
+
+
+html{
+  font-size: 62.5%;
   box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body{
@@ -23,8 +28,9 @@ main{
   /* border-radius: 10px; 
     overflow: hidden;  */
     /* object-fit: cover; */
-  
+   
 }
+
 
 .container{
   /* background-color: orange; */
@@ -32,6 +38,15 @@ main{
   justify-content: space-evenly; /* esto acomoda de forma horizontal */
   /* align-items: center; esto acomoda de forma de bloques o columnas  es ideal que antes se aplique un flex-direction: column*/
   /* flex-direction: row; este ya es por defecto y es acomodar en linea los elementos */
+ 
+}
+
+article .muestra {
+  max-width: 100%;
+  height: 100%; /* Ajusta la altura automáticamente */
+  object-fit: contain; /* Mantén toda la imagen visible dentro del contenedor */
+  object-fit: cover; /* Ajusta la imagen para que llene el contenedor */
+  display: block; /* Evita que las imágenes tengan espacios blancos adicionales */
 }
 
 
@@ -47,23 +62,97 @@ button:hover{
   background-color: aqua;
 }
 
+
+
 /* telefono */
-@media(min-width: 375px){
+@media(max-width: 390px){
   body{
     background-color: darkcyan;
   }
+
+
 }
-/* tablet */
-@media (min-width: 760px) {
-  body{
-    background-color: brown;
+/* desktop */
+@media (min-width: 770px) {
+  body {
+    background-color: pink;
   }
-   
+  
+  .container {
+    overflow: hidden; /* Oculta el contenido que exceda el tamaño */
+    position: relative; /* Necesario para ajustar correctamente elementos internos */
+    width: 60rem;
+    height: 60vh;
+  }
+
+
 }
 
-/* desktop */
-@media (min-width: 1440px) {
-   body{
-    background-color: pink;
-   }
+/* tablet */
+@media (max-width: 768px) {
+  body {
+    background-color: brown;
+  }
+
+  main{
+    width: 30rem;
+    height: 50rem;
+  }
+  
+  .container {
+    flex-wrap: wrap;
+    background-color: orange;
+    height: 50rem;
+    /* gap: 10px;  Espaciado entre elementos */
+    /* text-align: center; */
+    
+  }
+
+   .imagen {
+    width: 100%; /* Asegura que el contenedor de la imagen ocupe todo el ancho */
+    height: 30rem; /* Define una altura fija para el contenedor */
+    overflow: hidden; /* Oculta cualquier parte extra de la imagen */
+  }
+  
+  .muestra {
+    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+    height: 100%; /* Hace que la imagen ocupe toda la altura del contenedor */
+    object-fit: cover; /* Recorta la imagen si es necesario para encajar perfectamente */
+  }
+
+}
+
+/* telefono */
+@media (max-width: 390px) {
+  body {
+    background-color: darkcyan;
+  }
+
+  main{
+    display: flex;
+    width: 30rem;
+    height: 30vh;
+    margin: 0 auto; 
+  }
+
+  .container{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    /* align-items: center; */
+  }
+
+  .imagen {
+    width: 100%; /* Asegura que el contenedor de la imagen ocupe todo el ancho */
+    height: 30rem; /* Define una altura fija para el contenedor */
+    overflow: hidden; /* Oculta cualquier parte extra de la imagen */
+  }
+  
+  .muestra {
+    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+    height: 100%; /* Hace que la imagen ocupe toda la altura del contenedor */
+    object-fit: cover; /* Recorta la imagen si es necesario para encajar perfectamente */
+  }
+
+
 }
